@@ -1,0 +1,38 @@
+.navbarContainer,
+.logoContainer,
+.linksContainer {
+  display: flex;
+  align-items: center;
+}
+
+.navbarContainer {
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid lightgray;
+}
+
+.logo {
+  width: 55px;
+}
+
+.mr1 {
+  margin-right: 1rem;
+}
+
+.linksStyles {
+  color: blue;
+  text-decoration: none;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+.borderRight {
+  padding-right: 0.5rem;
+  border-right: 1px solid lightgray;
+}
+
+.ml1 {
+  margin-left: 0.5rem;
+}
