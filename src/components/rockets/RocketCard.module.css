@@ -1,0 +1,56 @@
+.cardContainer,
+.rocketDescription {
+  margin-bottom: 1rem;
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.rocketImage {
+  width: 200px;
+}
+
+.rocketName {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.rocketDescription {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.infoContainer {
+  width: 100%;
+  margin-left: 1rem;
+}
+
+.reserveButton,
+.cancelReservationButton {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.reserveButton {
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+}
+
+.reserveButton:hover {
+  background-color: #0156b1;
+}
+
+.cancelReservationButton {
+  background-color: #fff;
+  border: 1px solid #363636;
+  box-shadow: 0 4px 5px 0 #363636;
+  color: #363636;
+}
+
+.cancelReservationButton:hover {
+  background-color: #cfcfcf;
+}
