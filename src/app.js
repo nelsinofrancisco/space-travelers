@@ -3,23 +3,34 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-import React from 'react';
+import React, { useEffect } from 'react';
 import NavBar from './components/NavBar';
 import NotMatch from './pages/NotMatch';
+import Rockets from './pages/Rockets';
+import { getRockets } from './redux/rockets/rocketsSlice';
+import store from './redux/configureStore';
 
-const App = () => (
-  <Router>
-    <NavBar />
-    <Switch>
-      <Route exact path="/" />
-      <Route path="/rockets" />
-      <Route path="/missions" />
-      <Route path="/my-profile" />
-      <Route path="*">
-        <NotMatch />
-      </Route>
-    </Switch>
-  </Router>
-);
+const App = () => {
+  useEffect(() => {
+    store.dispatch(getRockets());
+  }, []);
+
+  return (
+    <Router>
+      <NavBar />
+      <Switch>
+        <Route exact path="/" />
+        <Route path="/rockets">
+          <Rockets />
+        </Route>
+        <Route path="/missions" />
+        <Route path="/my-profile" />
+        <Route path="*">
+          <NotMatch />
+        </Route>
+      </Switch>
+    </Router>
+  );
+};
 
 export default App;

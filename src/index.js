@@ -4,13 +4,14 @@ import './index.css';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import store from './redux/configureStore';
-import NavBar from './components/NavBar';
+import App from './app';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store} />
     <BrowserRouter>
-      <NavBar />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root'),
