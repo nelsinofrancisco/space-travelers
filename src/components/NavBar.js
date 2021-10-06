@@ -6,6 +6,26 @@ import NavStyles from './NavBar.module.css';
 
 const NavBar = () => {
   const location = useLocation();
+  const rocketLinkStyle = (pathname) => {
+    if (pathname === '/rockets' || pathname === '/' || pathname === '') {
+      return `${NavStyles.linksStyles} ${NavStyles.mr1} ${NavStyles.active}`;
+    }
+    return `${NavStyles.linksStyles} ${NavStyles.mr1}`;
+  };
+
+  const missionsLinkStyle = (pathname) => {
+    if (pathname === '/missions') {
+      return `${NavStyles.linksStyles} ${NavStyles.borderRight} ${NavStyles.active}`;
+    }
+    return `${NavStyles.linksStyles} ${NavStyles.borderRight}`;
+  };
+
+  const myProfileLinkStyle = (pathname) => {
+    if (pathname === '/my-profile') {
+      return `${NavStyles.linksStyles} ${NavStyles.ml1} ${NavStyles.active}`;
+    }
+    return `${NavStyles.linksStyles} ${NavStyles.ml1}`;
+  };
 
   return (
     <nav className={NavStyles.navbarContainer}>
@@ -14,9 +34,9 @@ const NavBar = () => {
         <h1>Space Travelers HUB</h1>
       </div>
       <div className={NavStyles.linksContainer}>
-        <NavLink key={uuidv4()} className={(location.pathname === '/rockets' ? `${NavStyles.linksStyles} ${NavStyles.mr1} ${NavStyles.active}` : `${NavStyles.linksStyles} ${NavStyles.mr1}`)} to="/rockets">Rockets</NavLink>
-        <NavLink key={uuidv4()} className={(location.pathname === '/missions' ? `${NavStyles.linksStyles} ${NavStyles.borderRight} ${NavStyles.active}` : `${NavStyles.linksStyles} ${NavStyles.borderRight}`)} to="/missions">Missions</NavLink>
-        <NavLink key={uuidv4()} className={(location.pathname === '/my-profile' ? `${NavStyles.linksStyles} ${NavStyles.ml1} ${NavStyles.active}` : `${NavStyles.linksStyles} ${NavStyles.ml1}`)} to="/my-profile">My Profile</NavLink>
+        <NavLink key={uuidv4()} className={rocketLinkStyle(location.pathname)} to="/rockets">Rockets</NavLink>
+        <NavLink key={uuidv4()} className={missionsLinkStyle(location.pathname)} to="/missions">Missions</NavLink>
+        <NavLink key={uuidv4()} className={myProfileLinkStyle(location.pathname)} to="/my-profile">My Profile</NavLink>
       </div>
 
     </nav>

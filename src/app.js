@@ -24,7 +24,10 @@ const App = () => {
     <Router>
       <NavBar />
       <Switch>
-        <Route exact path="/rockets">
+        <Route exact path="/">
+          <Rockets />
+        </Route>
+        <Route path="/rockets">
           <Rockets />
         </Route>
         <Route path="/missions">
