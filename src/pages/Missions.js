@@ -1,8 +1,7 @@
 import MissionTable from '../components/missions/MissionsTable';
 
 const Missions = () => (
-  <div>
-    <h3>Missions</h3>
+  <div className="m-5">
     <MissionTable />
   </div>
 );
