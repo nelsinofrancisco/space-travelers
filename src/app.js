@@ -9,6 +9,7 @@ import NotMatch from './pages/NotMatch';
 import Rockets from './pages/Rockets';
 import { getRockets } from './redux/rockets/rocketsSlice';
 import store from './redux/configureStore';
+import MyProfile from './pages/MyProfile';
 
 const App = () => {
   useEffect(() => {
@@ -24,7 +25,9 @@ const App = () => {
           <Rockets />
         </Route>
         <Route path="/missions" />
-        <Route path="/my-profile" />
+        <Route path="/my-profile">
+          <MyProfile />
+        </Route>
         <Route path="*">
           <NotMatch />
         </Route>
