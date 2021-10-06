@@ -12,6 +12,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.22.0",
+    "bootstrap": "^5.1.2",
     "eslint": "7.x",
     "eslint-config-airbnb": "18.x",
     "eslint-plugin-import": "2.x",
