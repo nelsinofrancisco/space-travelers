@@ -10,9 +10,9 @@ const MissionRowTable = (props) => {
   return (
     <tr>
       <td className="fs-5 fw-bold">{missionName}</td>
-      <td>{description}</td>
-      {reserved ? <td className="badge rounded-pill bg-primary text-light">MEMBER</td> : <td className="badge rounded-pill bg-secondary text-light">NOT A MEMBER</td>}
-      <td><button className={(reserved) ? 'btn btn-outline-danger' : 'btn btn-outline-secondary'} type="button" onClick={() => store.dispatch(removeMission(missionId))}>{(reserved) ? 'Leave Mission' : 'Join Mission'}</button></td>
+      <td className="p-2">{description}</td>
+      {reserved ? <td className="badge rounded-pill bg-primary text-light m-2">MEMBER</td> : <td className="badge rounded-pill bg-secondary text-light m-2">NOT A MEMBER</td>}
+      <td><button className={(reserved) ? 'btn btn-outline-danger m-2' : 'btn btn-outline-secondary m-2'} type="button" onClick={() => store.dispatch(removeMission(missionId))}>{(reserved) ? 'Leave Mission' : 'Join Mission'}</button></td>
     </tr>
   );
 };
