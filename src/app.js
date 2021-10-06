@@ -12,7 +12,7 @@ import { getRockets } from './redux/rockets/rocketsSlice';
 import { getMissions } from './redux/missions/missionsSlice';
 import store from './redux/configureStore';
 import MyProfile from './pages/MyProfile';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   useEffect(() => {
