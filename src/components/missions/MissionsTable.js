@@ -7,9 +7,9 @@ const MissionsTable = () => {
 
   return (
     <div>
-      <table className="table table-striped table-hover">
+      <table className="table table-striped table-hover table-bordered">
         <tr className="fs-5">
-          <th>Mission</th>
+          <th className="p-2">Mission</th>
           <th>Description</th>
           <th>Status</th>
           <th> </th>
