@@ -1,24 +1,24 @@
-import React from "react";
+import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
-import { create } from "react-test-renderer";
+import { create } from 'react-test-renderer';
 import { render, screen } from '@testing-library/react';
-import ReservedMissionsList from "./ReservedMissionsList";
 import { Provider } from 'react-redux';
+import ReservedMissionsList from './ReservedMissionsList';
 import store from '../../redux/configureStore';
 
 const createComponent = create(
   <Provider store={store}>
     <ReservedMissionsList />
-  </Provider>
+  </Provider>,
 );
 
 const renderComponent = () => {
   render(
     <Provider store={store}>
       <ReservedMissionsList />
-    </Provider>
+    </Provider>,
   );
-}
+};
 
 describe('Testing ReservedMissionsList component', () => {
   test('type for ReservedMissionsList is a table HTML tag', () => {
