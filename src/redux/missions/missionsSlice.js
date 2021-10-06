@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
@@ -17,12 +18,12 @@ export const getMissions = createAsyncThunk(
 
     response.data.forEach((obj) => {
       const {
-        missionId, missionName, description,
+        mission_id, mission_name, description,
       } = obj;
 
       const formatedData = {
-        missionId,
-        missionName,
+        mission_id,
+        mission_name,
         description,
       };
 
