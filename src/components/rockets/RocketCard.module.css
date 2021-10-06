@@ -3,8 +3,12 @@
   margin-bottom: 1rem;
 }
 
-.cardContainer {
+.cardContainer,
+.descriptionContainer {
   display: flex;
+}
+
+.cardContainer {
   justify-content: flex-start;
 }
 
@@ -47,10 +51,21 @@
 .cancelReservationButton {
   background-color: #fff;
   border: 1px solid #363636;
-  box-shadow: 0 4px 5px 0 #363636;
+  box-shadow: -1px 1px 2px 0 #363636;
   color: #363636;
 }
 
 .cancelReservationButton:hover {
   background-color: #cfcfcf;
+}
+
+.reservedTag {
+  font-size: 10px;
+  font-weight: 700;
+  background-color: #65bfcf;
+  color: #fff;
+  padding: 0.1rem 0.3rem;
+  margin-right: 0.3rem;
+  border-radius: 3px;
+  line-height: 14px;
 }

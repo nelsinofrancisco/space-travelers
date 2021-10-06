@@ -1,10 +1,12 @@
 /* eslint-disable camelcase */
 import { PropTypes } from 'prop-types';
+import { removeRocket } from '../../redux/rockets/rocketsSlice';
 import RocketCardStyle from './RocketCard.module.css';
+import store from '../../redux/configureStore';
 
 const RocketCard = (props) => {
   const {
-    rocket_name, description, flickr_images,
+    rocket_name, description, flickr_images, rocket_id, reserved,
   } = props;
 
   return (
@@ -15,10 +17,15 @@ const RocketCard = (props) => {
       <div className={RocketCardStyle.infoContainer}>
         <div>
           <p className={RocketCardStyle.rocketName}>{rocket_name}</p>
-          <p className={RocketCardStyle.rocketDescription}>{description}</p>
+          <div className={RocketCardStyle.descriptionContainer}>
+            <p className={RocketCardStyle.rocketDescription}>
+              {reserved && (<span className={RocketCardStyle.reservedTag}>Reserved</span>)}
+              {description}
+            </p>
+          </div>
         </div>
         <div>
-          <button className={RocketCardStyle.reserveButton} type="button">Reserve Rocket</button>
+          <button className={(reserved) ? RocketCardStyle.cancelReservationButton : RocketCardStyle.reserveButton} type="button" onClick={() => store.dispatch(removeRocket(rocket_id))}>{(reserved) ? 'Cancel Reservation' : 'Reserve Rocket'}</button>
         </div>
       </div>
     </div>
@@ -26,6 +33,8 @@ const RocketCard = (props) => {
 };
 
 RocketCard.propTypes = {
+  reserved: PropTypes.bool.isRequired,
+  rocket_id: PropTypes.string.isRequired,
   rocket_name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   flickr_images: PropTypes.instanceOf(Array).isRequired,
