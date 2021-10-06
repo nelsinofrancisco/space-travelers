@@ -12,7 +12,7 @@ import { getRockets } from './redux/rockets/rocketsSlice';
 import { getMissions } from './redux/missions/missionsSlice';
 import store from './redux/configureStore';
 import MyProfile from './pages/MyProfile';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   useEffect(() => {
@@ -24,16 +24,13 @@ const App = () => {
     <Router>
       <NavBar />
       <Switch>
-        <Route exact path="/"> 
-          <Rockets />
-        </Route>
-        <Route path="/rockets">
+        <Route exact path="/rockets">
           <Rockets />
         </Route>
         <Route path="/missions">
           <Missions />
         </Route>
-        <Route path="/my-profile"> 
+        <Route path="/my-profile">
           <MyProfile />
         </Route>
         <Route path="*">
