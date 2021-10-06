@@ -1,6 +1,6 @@
 import { PropTypes } from 'prop-types';
 
-const MissionReserved = (props) => {
+const ReservedMissions = (props) => {
   const { missionName } = props;
   return (
     <tr>
@@ -9,8 +9,8 @@ const MissionReserved = (props) => {
   );
 };
 
-MissionReserved.propTypes = {
+ReservedMissions.propTypes = {
   missionName: PropTypes.string.isRequired,
 };
 
-export default MissionReserved;
+export default ReservedMissions;
