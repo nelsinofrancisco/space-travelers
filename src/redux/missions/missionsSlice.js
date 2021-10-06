@@ -25,6 +25,7 @@ export const getMissions = createAsyncThunk(
         mission_id,
         mission_name,
         description,
+        reserved: false,
       };
 
       data.push(formatedData);
@@ -37,7 +38,21 @@ export const getMissions = createAsyncThunk(
 const missionsSlice = createSlice({
   name: 'user',
   initialState,
-  reducers: {},
+  reducers: {
+    removeMission: (state, action) => {
+      const missions = { ...state };
+
+      missions.data = missions.data.map((missions) => {
+        if (missions.mission_id !== action.payload) {
+          return missions;
+        }
+
+        return { ...missions, reserved: !missions.reserved };
+      });
+
+      return missions;
+    },
+  },
   extraReducers: {
     [getMissions.pending.type]: (state) => ({ ...state, isFetching: true }),
     [getMissions.fulfilled.type]: (state, action) => (
@@ -48,4 +63,5 @@ const missionsSlice = createSlice({
   },
 });
 
+export const { removeMission } = missionsSlice.actions;
 export default missionsSlice.reducer;

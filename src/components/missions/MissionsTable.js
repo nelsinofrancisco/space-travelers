@@ -21,6 +21,8 @@ const MissionsTable = () => {
                 key={uuidv4()}
                 missionName={mission.mission_name}
                 description={mission.description}
+                missionId={mission.mission_id}
+                reserved={mission.reserved}
               />
             ))
           }
