@@ -19,7 +19,7 @@ const RocketCard = (props) => {
           <p className={RocketCardStyle.rocketName}>{rocket_name}</p>
           <div className={RocketCardStyle.descriptionContainer}>
             <p className={RocketCardStyle.rocketDescription}>
-              {(reserved) ? (<span className={RocketCardStyle.reservedTag}>Reserved</span>) : ''}
+              {reserved && (<span className={RocketCardStyle.reservedTag}>Reserved</span>)}
               {description}
             </p>
           </div>
