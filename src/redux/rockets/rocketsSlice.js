@@ -26,6 +26,7 @@ export const getRockets = createAsyncThunk(
         rocket_name,
         description,
         flickr_images,
+        reserved: false,
       };
 
       data.push(formatedData);
@@ -38,7 +39,21 @@ export const getRockets = createAsyncThunk(
 const rocketsSlice = createSlice({
   name: 'user',
   initialState,
-  reducers: {},
+  reducers: {
+    removeRocket: (state, action) => {
+      const rockets = { ...state };
+
+      rockets.data = rockets.data.map((rocket) => {
+        if (rocket.rocket_id !== action.payload) {
+          return rocket;
+        }
+
+        return { ...rocket, reserved: !rocket.reserved };
+      });
+
+      return rockets;
+    },
+  },
   extraReducers: {
     [getRockets.pending.type]: (state) => ({ ...state, isFetching: true }),
     [getRockets.fulfilled.type]: (state, action) => (
@@ -49,4 +64,5 @@ const rocketsSlice = createSlice({
   },
 });
 
+export const { removeRocket } = rocketsSlice.actions;
 export default rocketsSlice.reducer;
