@@ -7,12 +7,16 @@ import React, { useEffect } from 'react';
 import NavBar from './components/NavBar';
 import NotMatch from './pages/NotMatch';
 import Rockets from './pages/Rockets';
+import Missions from './pages/Missions';
 import { getRockets } from './redux/rockets/rocketsSlice';
+import { getMissions } from './redux/missions/missionsSlice';
 import store from './redux/configureStore';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   useEffect(() => {
     store.dispatch(getRockets());
+    store.dispatch(getMissions());
   }, []);
 
   return (
@@ -23,7 +27,9 @@ const App = () => {
         <Route path="/rockets">
           <Rockets />
         </Route>
-        <Route path="/missions" />
+        <Route path="/missions">
+          <Missions />
+        </Route>
         <Route path="/my-profile" />
         <Route path="*">
           <NotMatch />
