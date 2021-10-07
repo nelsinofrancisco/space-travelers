@@ -1,0 +1,49 @@
+.rocketItem {
+  padding: 0.5rem 0.5rem 1rem 0.5rem;
+}
+
+.container {
+  width: 100%;
+  border-bottom: 1px solid lightgray;
+}
+
+.container:nth-child(even) {
+  border-bottom: 2px solid lightgray;
+}
+
+.container:last-child {
+  border-bottom: none;
+}
+
+.cancelReservationButton {
+  padding: 0.2rem 1rem;
+  border-radius: 5px;
+  background-color: #fff;
+  border: 1px solid #363636;
+  box-shadow: -1px 1px 2px 0 #363636;
+  color: #363636;
+  margin-left: 2rem;
+}
+
+.cancelReservationButton:hover {
+  background-color: #f83b3b;
+  color: white;
+  border: 1px solid #857171;
+  box-shadow: -1px 1px 2px 0 #857171;
+  font-weight: 700;
+}
+
+.reserveButton {
+  padding: 0.2rem 1rem;
+  border-radius: 5px;
+  background-color: #007bff;
+  border: none;
+  text-decoration: none;
+  color: #fff;
+  margin-left: 1rem;
+}
+
+.reserveButton:hover {
+  background-color: #0156b1;
+  color: white;
+}
