@@ -6,14 +6,14 @@ import { v4 as uuidv4 } from 'uuid';
 import ReservedMissions from './ReservedMissions';
 
 const createComponent = create(
-  <ReservedMissions missionName="Thaicom" missionId={uuidv4()} wikipedia="https://en.wikipedia.org/wiki/Thaicom"/>,
+  <ReservedMissions missionName="Thaicom" missionId={uuidv4()} wikipedia="https://en.wikipedia.org/wiki/Thaicom" />,
 );
 
 const renderComponent = (missionName) => {
   render(
     <table className="table table-striped table-hover table-bordered">
       <tbody>
-        <ReservedMissions key={uuidv4()} missionName={missionName} missionId={uuidv4()} wikipedia="https://en.wikipedia.org/wiki/Thaicom"/>
+        <ReservedMissions key={uuidv4()} missionName={missionName} missionId={uuidv4()} wikipedia="https://en.wikipedia.org/wiki/Thaicom" />
       </tbody>
     </table>,
   );
