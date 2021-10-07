@@ -11,7 +11,7 @@ const ReservedRocket = (props) => {
       <p className={ReservedRocketStyle.rocketItem}>
         {rocket_name}
         <button className={ReservedRocketStyle.cancelReservationButton} type="button" onClick={() => store.dispatch(removeRocket(rocket_id))}>Cancel Reservation</button>
-        <button type="button" className={ReservedRocketStyle.reserveButton} onClick={() => window.open(wikipedia)}>Cancel Reservation</button>
+        <button type="button" className={ReservedRocketStyle.reserveButton} onClick={() => window.open(wikipedia)}>Read More</button>
       </p>
     </div>
   );
