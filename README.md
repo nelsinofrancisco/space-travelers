@@ -4,13 +4,13 @@
 
 For this repository, We've created a project to create a React app using Redux, the main objective is to use the [SpaceX API](https://api.spacexdata.com/v3) to consume it, use actions and reducers in React, to understand the concepts about state management, connect React and Redux, connect an existing API via Redux and use the data to display something in the UI, apply React best practices and language style guides in code, and finally add tests using JEST and React Testing Library in the app.
 
+### [Live Demo Version Link 👀](https://space-travelers-ndg.netlify.app)
+
 <center>
 <div>
     <img src="./assets/SpaceTravelersHUB.PNG">
 </div>
 </center>
-
-[live version](https://space-travelers-ndg.netlify.app)
 
 ## Built With 🔨
 
