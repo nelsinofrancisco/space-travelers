@@ -1,20 +1,3 @@
-.rocketItem {
-  padding: 0.5rem 0.5rem 1rem 0.5rem;
-}
-
-.container {
-  width: 100%;
-  border-bottom: 1px solid lightgray;
-}
-
-.container:nth-child(even) {
-  border-bottom: 2px solid lightgray;
-}
-
-.container:last-child {
-  border-bottom: none;
-}
-
 .cancelReservationButton {
   padding: 0.2rem 1rem;
   border-radius: 5px;

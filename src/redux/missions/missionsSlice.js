@@ -18,13 +18,14 @@ export const getMissions = createAsyncThunk(
 
     response.data.forEach((obj) => {
       const {
-        mission_id, mission_name, description,
+        mission_id, mission_name, description, wikipedia,
       } = obj;
 
       const formatedData = {
         mission_id,
         mission_name,
         description,
+        wikipedia,
         reserved: false,
       };
 
