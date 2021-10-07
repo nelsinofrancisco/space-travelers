@@ -21,29 +21,34 @@ const renderComponent = () => {
 };
 
 describe('Testing ReservedMissionsList component', () => {
-  test('type for ReservedMissionsList is a table HTML tag', () => {
+  test('first type for ReservedMissionsList is a p HTML tag', () => {
     const component = createComponent.toJSON();
-    expect(component.type).toEqual('table');
+    expect(component[0].type).toEqual('p');
+  });
+
+  test('second type for ReservedMissionsList is a table HTML tag', () => {
+    const component = createComponent.toJSON();
+    expect(component[1].type).toEqual('table');
   });
 
   test('className props are present in ReservedMissionsList component', () => {
     const component = createComponent.toJSON();
-    expect(component.props.className).toEqual('table table-bordered rounded');
+    expect(component[1].props.className).toEqual('table table-bordered rounded');
   });
 
   test('its child is a tbody HTML tag', () => {
     const component = createComponent.toJSON();
-    expect(component.children[0].type).toEqual('tbody');
+    expect(component[1].children[0].type).toEqual('tbody');
   });
 
   test('its child has empty props', () => {
     const component = createComponent.toJSON();
-    expect(component.children[0].props).toEqual({});
+    expect(component[1].children[0].props).toEqual({});
   });
 
   test('its child has nothing as children', () => {
     const component = createComponent.toJSON();
-    expect(component.children[0].children).toEqual(null);
+    expect(component[1].children[0].children).toEqual(null);
   });
 
   test('render ReservedMissionsList component', () => {
