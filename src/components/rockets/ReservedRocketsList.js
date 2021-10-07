@@ -9,9 +9,16 @@ const ReservedRockets = () => {
 
   return (
     <div className={(reserved.length > 0) ? ReservedRocketsListStyle.listContainer : ''}>
+      { reserved.length === 0
+      && <p className={ReservedRocketsListStyle.title}>&emsp; Reserve a Rocket First </p> }
       {
       reserved.map((rocket) => (
-        <ReservedRocket key={uuidv4()} rocket_name={rocket.rocket_name} />
+        <ReservedRocket
+          key={uuidv4()}
+          rocket_id={rocket.rocket_id}
+          rocket_name={rocket.rocket_name}
+          wikipedia={rocket.wikipedia}
+        />
       ))
     }
     </div>

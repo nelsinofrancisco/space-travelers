@@ -18,7 +18,7 @@ export const getRockets = createAsyncThunk(
 
     response.data.forEach((obj) => {
       const {
-        rocket_id, rocket_name, description, flickr_images,
+        rocket_id, rocket_name, description, flickr_images, wikipedia,
       } = obj;
 
       const formatedData = {
@@ -26,6 +26,7 @@ export const getRockets = createAsyncThunk(
         rocket_name,
         description,
         flickr_images,
+        wikipedia,
         reserved: false,
       };
 
